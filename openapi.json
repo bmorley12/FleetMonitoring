@@ -1,0 +1,193 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fleet Management Simple Metrics Server",
+    "description": "Simple and correct implementation of the Fleet Management Metrics Coding Assessment",
+    "contact": {
+      "name": "API Support",
+      "url": "http://www.example.com/support",
+      "email": "support@example.com"
+    },
+    "license": {
+      "name": "None",
+      "url": "https://safely-you.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:6733/api/v1",
+      "description": "local server"
+    }
+  ],
+  "paths": {
+    "/devices/{device_id}/heartbeat": {
+      "post": {
+        "description": "Register a heartbeat from a device",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DeviceIDPathParam"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "HeartbeatRequest",
+                "required": ["sent_at"],
+                "properties": {
+                  "sent_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "the request was completed successfully"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    },
+    "/devices/{device_id}/stats": {
+      "post": {
+        "description": "Add per device statistics",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DeviceIDPathParam"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "UploadStatsRequest",
+                "required": ["sent_at", "upload_time"],
+                "properties": {
+                  "sent_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "upload_time": {
+                    "description": "the number of nanoseconds it took to upload a video",
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "the request was completed successfully"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      },
+      "get": {
+        "description": "Return device stats",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/DeviceIDPathParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Device statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "GetDeviceStatsResponse",
+                  "required": ["avg_upload_time", "uptime"],
+                  "properties": {
+                    "avg_upload_time": {
+                      "description": "returned as a time duration string. Eg: 5m10s",
+                      "type": "string"
+                    },
+                    "uptime": {
+                      "description": "Uptime as a percentage. eg: 98.999",
+                      "type": "number",
+                      "format": "double"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "the request was completed successfully"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "DeviceIDPathParam": {
+        "name": "device_id",
+        "in": "path",
+        "description": "ID of a device to register heartbeat with",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "Device not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "NotFoundResponse",
+              "type": "object",
+              "required": ["msg"],
+              "properties": {
+                "msg": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "Server Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "ErrorResponse",
+              "type": "object",
+              "required": ["msg"],
+              "properties": {
+                "msg": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
