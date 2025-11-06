@@ -12,7 +12,7 @@ Can be run through a docker container:
 
 or with
 
-`$> go run main.go`
+`$> go run ./cmd/FleetMonitoring/main.go`
 
 
 ## Your Questions
