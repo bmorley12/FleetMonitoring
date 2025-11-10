@@ -1,6 +1,4 @@
 # FleetMonitoring
-SafelyYou coding challenge
-
 
 ## Running the app
 Can be run through a docker container:
