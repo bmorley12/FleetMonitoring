@@ -1,0 +1,9 @@
+services:
+  fleet-monitoring:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fleet-monitoring-dock
+    ports:
+      - "6733:6733"
+    restart: unless-stopped

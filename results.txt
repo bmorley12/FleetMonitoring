@@ -1,59 +1,59 @@
-[device-simulator] 2025/11/04 14:50:47 finished loading stats requests
-[device-simulator] 2025/11/04 14:50:47 finished loading heartbeat requests
-[device-simulator] 2025/11/04 14:50:47 starting requests for device_id: b4-45-52-a2-f1-3c 
-[device-simulator] 2025/11/04 14:50:47 starting requests for device_id: 26-9a-66-01-33-83 
-[device-simulator] 2025/11/04 14:50:47 starting requests for device_id: 18-b8-87-e7-1f-06 
-[device-simulator] 2025/11/04 14:50:47 starting requests for device_id: 38-4e-73-e0-33-59 
-[device-simulator] 2025/11/04 14:50:47 starting requests for device_id: 60-6b-44-84-dc-64 
-[device-simulator] 2025/11/04 14:50:47 executing 100 stats and 479 heartbeats for 60-6b-44-84-dc-64
-[device-simulator] 2025/11/04 14:50:47 executing 100 stats and 446 heartbeats for 26-9a-66-01-33-83
-[device-simulator] 2025/11/04 14:50:47 executing 100 stats and 474 heartbeats for 18-b8-87-e7-1f-06
-[device-simulator] 2025/11/04 14:50:47 executing 100 stats and 479 heartbeats for 38-4e-73-e0-33-59
-[device-simulator] 2025/11/04 14:50:47 executing 100 stats and 480 heartbeats for b4-45-52-a2-f1-3c
-[device-simulator] 2025/11/04 14:50:47 ############ RESULTS #################
-[device-simulator] 2025/11/04 14:50:47 
-DeviceID: 18-b8-87-e7-1f-06
-	Uptime
-		Expected: 98.75000
-		Actual: 98.75000
-
-	AvgUploadTime
-		Expected: 3m17.331667813s
-		Actual: 3m17.331667813s
-[device-simulator] 2025/11/04 14:50:47 
-DeviceID: 38-4e-73-e0-33-59
-	Uptime
-		Expected: 99.79167
-		Actual: 99.79167
-
-	AvgUploadTime
-		Expected: 3m29.226522788s
-		Actual: 3m29.226522788s
-[device-simulator] 2025/11/04 14:50:47 
+[device-simulator] 2025/11/10 15:34:52 finished loading stats requests
+[device-simulator] 2025/11/10 15:34:52 finished loading heartbeat requests
+[device-simulator] 2025/11/10 15:34:52 starting requests for device_id: b4-45-52-a2-f1-3c 
+[device-simulator] 2025/11/10 15:34:52 starting requests for device_id: 26-9a-66-01-33-83 
+[device-simulator] 2025/11/10 15:34:52 starting requests for device_id: 18-b8-87-e7-1f-06 
+[device-simulator] 2025/11/10 15:34:52 starting requests for device_id: 38-4e-73-e0-33-59 
+[device-simulator] 2025/11/10 15:34:52 starting requests for device_id: 60-6b-44-84-dc-64 
+[device-simulator] 2025/11/10 15:34:52 executing 100 stats and 446 heartbeats for 26-9a-66-01-33-83
+[device-simulator] 2025/11/10 15:34:52 executing 100 stats and 474 heartbeats for 18-b8-87-e7-1f-06
+[device-simulator] 2025/11/10 15:34:52 executing 100 stats and 479 heartbeats for 38-4e-73-e0-33-59
+[device-simulator] 2025/11/10 15:34:52 executing 100 stats and 479 heartbeats for 60-6b-44-84-dc-64
+[device-simulator] 2025/11/10 15:34:52 executing 100 stats and 480 heartbeats for b4-45-52-a2-f1-3c
+[device-simulator] 2025/11/10 15:34:53 ############ RESULTS #################
+[device-simulator] 2025/11/10 15:34:53 
 DeviceID: 60-6b-44-84-dc-64
 	Uptime
 		Expected: 99.79167
-		Actual: 99.79167
+		Actual: 47950.00000
 
 	AvgUploadTime
 		Expected: 3m7.893379134s
-		Actual: 3m7.893379134s
-[device-simulator] 2025/11/04 14:50:47 
+		Actual: 3m8.219768958s
+[device-simulator] 2025/11/10 15:34:53 
 DeviceID: b4-45-52-a2-f1-3c
 	Uptime
 		Expected: 100.00000
-		Actual: 100.00000
+		Actual: 200.00000
 
 	AvgUploadTime
 		Expected: 3m19.085533836s
 		Actual: 3m19.085533836s
-[device-simulator] 2025/11/04 14:50:47 
+[device-simulator] 2025/11/10 15:34:53 
 DeviceID: 26-9a-66-01-33-83
 	Uptime
 		Expected: 92.91667
-		Actual: 92.91667
+		Actual: 185.83333
 
 	AvgUploadTime
 		Expected: 3m21.858747766s
 		Actual: 3m21.858747766s
-[device-simulator] 2025/11/04 14:50:47 all done!
+[device-simulator] 2025/11/10 15:34:53 
+DeviceID: 18-b8-87-e7-1f-06
+	Uptime
+		Expected: 98.75000
+		Actual: 197.50000
+
+	AvgUploadTime
+		Expected: 3m17.331667813s
+		Actual: 3m17.331667813s
+[device-simulator] 2025/11/10 15:34:53 
+DeviceID: 38-4e-73-e0-33-59
+	Uptime
+		Expected: 99.79167
+		Actual: 199.58333
+
+	AvgUploadTime
+		Expected: 3m29.226522788s
+		Actual: 3m29.226522788s
+[device-simulator] 2025/11/10 15:34:53 all done!

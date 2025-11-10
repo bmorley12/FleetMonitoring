@@ -5,17 +5,45 @@ SafelyYou coding challenge
 ## Running the app
 Can be run through a docker container:
  
-`$> docker build -t fleet-monitoring-app`
+```bash
+docker compose build
 
-`$> docker run -it --rm -p 6733:6733 --name fleet-monitoring-dock fleet-monitoring-app`
+docker compose up
+```
 
 
 or with
+```bash
+go run cmd/FleetMonitoring/main.go
+```
 
-`$> go run main.go`
+## Testing
+
+Testing can be done by running any of the executables in `./device_simulators`. Please choose the correct one for your operating system.
+
+Standalone tests can be achieved with the following example curl commands:
+
+```bash
+curl \
+  -X POST \
+  -H 'content-type: application/json' \
+  -d '{"sent_at": "2024-04-02T16:58:00Z"}' \
+  'http://127.0.0.1:6733/api/v1/devices/60-6b-44-84-dc-64/heartbeat'
+
+curl \
+  -X POST \
+  -H 'content-type: application/json' \
+  -d '{"sent_at": "0001-01-01T00:00:00Z", "upload_time": 223543506424}' \
+  'http://127.0.0.1:6733/api/v1/devices/60-6b-44-84-dc-64/stats'
+
+curl \
+  -H 'content-type: application/json' \
+  'http://127.0.0.1:6733/api/v1/devices/60-6b-44-84-dc-64/stats'
+
+```
 
 
-## Your Questions
+## FAQ
 
 **How long did you spend working on the problem? What did you find to be the most difficult part?**
 
