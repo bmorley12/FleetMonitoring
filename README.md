@@ -1,6 +1,4 @@
 # FleetMonitoring
-SafelyYou coding challenge
-
 
 ## Running the app
 Can be run through a docker container:
@@ -14,7 +12,7 @@ docker compose up
 
 or with
 ```bash
-go run cmd/FleetMonitoring/main.go
+go run ./cmd/FleetMonitoring/main.go
 ```
 
 ## Testing
